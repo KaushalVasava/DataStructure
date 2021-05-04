@@ -15,9 +15,8 @@ class stack{
 			 cout<<"\nstack is full";
 			else
 			{
-				top++;
-				a[top]=val;
-			 } 
+			    a[++top]=val;
+			} 
 		}
 		int pop()
 		{
@@ -25,8 +24,7 @@ class stack{
 			if(top==-1)
 			 cout<<"\nStack is Empty.";
 			else{
-				val=a[top];
-				top--;
+				val=a[top--];
 			} 
 			return val;
 		}
@@ -43,8 +41,8 @@ class Queue:public stack{
 		{
 			while(top!=-1)
 			{
-				x=s1.pop();
-	            s2.push(x);
+			     x=s1.pop();
+                	     s2.push(x);
 			}
 			y=s2.pop();
 			return y;
@@ -55,14 +53,14 @@ class Queue:public stack{
         	 cout<<"\nQueue is Empty";
         	else
 			{
-				for(int i=0;i<top;i++)
+		          for(int i=0;i<top;i++)
 			      cout<<a[i]<<" ";
 			} 
 		}
 };
 
 int main(){
-	Queue q1;
+    Queue q1;
     int n,a,i,ch;
     cout<<"\nEnter capapcity of Queue";
     cin>>n;
@@ -79,9 +77,9 @@ int main(){
     		case 2:a=q1.Delete();
     		       cout<<"\nDeleted value is "<<a;
 			       break;
-			case 3:q1.display();
+		case 3:q1.display();
 			       break;
-			case 4:exit(0);	          
+		case 4:exit(0);	          
 		}
 	}
 	return 0;
